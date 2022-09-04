@@ -29,11 +29,11 @@ class User(db.Model):
 
 class Character(db.Model):
     __tablename__ = 'character'
-    id = db.Column(db.integer, primary_key=True)
-    name = db.Column(db.string(150))
-    gender = db.Column(db.string(150))
-    birth_year = db.Column(db.string(150))
-    height = db.Column(db.string(150))
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150))
+    gender = db.Column(db.String(150))
+    birth_year = db.Column(db.String(150))
+    height = db.Column(db.String(150))
 
     def __init__(self,name, gender, birth_year,height):
         self.name = name
@@ -57,11 +57,11 @@ class Character(db.Model):
 
 class Planet(db.Model):
     __tablename__ = 'planet'  
-    id = db.Column(db.integer, primary_key=True)
-    name = db.Column(db.string(150))
-    terrain = db.Column(db.string(150))
-    climate = db.Column(db.string(150))
-    population = db.Column(db.string(150))
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150))
+    terrain = db.Column(db.String(150))
+    climate = db.Column(db.String(150))
+    population = db.Column(db.String(150))
 
     def __init__(self,name, terrain, climate,population):
         self.name = name
@@ -86,11 +86,11 @@ class Planet(db.Model):
 
 class Favorite(db.Model):
     __tablename__ = 'favorite'
-    id = db.Column(db.integer, primary_key=True)
-    user_id = db.Column(db.integer, db.ForeignKey("user.id"))
-    character_id = db.Column(db.integer, db.ForeignKey("character.id"))
-    planet_id = db.Column(db.integer, db.ForeignKey("planet.id"))
-
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    character_id = db.Column(db.Integer, db.ForeignKey("character.id"))
+    planet_id = db.Column(db.Integer, db.ForeignKey("planet.id"))
+    
     def delete(self):
         db.session.delete(self)
         try:
