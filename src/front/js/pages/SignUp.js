@@ -34,7 +34,7 @@ export const SignUp = (props) => {
                             onChange={(e) => setName(e.target.value)}
                             className="form-control"
                           />
-                          <label className="form-label" for="name">
+                          <label className="form-label" htmlFor="name">
                             Your Name
                           </label>
                         </div>
@@ -51,7 +51,7 @@ export const SignUp = (props) => {
                             onChange={(e) => setEmail(e.target.value)}
                             className="form-control"
                           />
-                          <label className="form-label" for="email">
+                          <label className="form-label" htmlFor="email">
                             Your Email
                           </label>
                         </div>
@@ -68,13 +68,13 @@ export const SignUp = (props) => {
                             onChange={(e) => setPassword(e.target.value)}
                             className="form-control"
                           />
-                          <label className="form-label" for="password">
+                          <label className="form-label" htmlFor="password">
                             Password
                           </label>
                         </div>
                       </div>
 
-                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button
                           type="button"
                           className="btn btn-primary btn-lg"
@@ -96,9 +96,9 @@ export const SignUp = (props) => {
                       </div>
                     </form>
                   </div>
-                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                     <img
-                      src="https://i.pinimg.com/originals/92/25/cd/9225cd08ef9c7d6c618befb4e861e7af.jpg"
+                      src="https://i.imgur.com/gtbuBJV.png"
                       className="img-fluid h-90"
                       alt="Sample image"
                     />
