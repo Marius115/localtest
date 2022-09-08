@@ -32,6 +32,25 @@ const getState = ({ getStore, getActions, setStore }) => {
         return response.status === 201;
       },
 
+      login: async (requestBody) => {
+        const response = await fetch(`${process.env.BACKEND_URL}/api/token`, {
+          method: "POST",
+          body: JSON.stringify(requestBody),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+        if (!response.ok) throw Error("Hubo un problema con el login");
+        if (response.status === 401) {
+          throw "clave o usario incorrecto";
+        } else if (response.status === 400) {
+          throw "revise el payload de su solicitud...";
+        }
+        const data = await response.json();
+        localStorage.setItem("jwt-token", data.token);
+        return true;
+      },
+
       getMessage: async () => {
         try {
           // fetching data from the backend
