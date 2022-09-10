@@ -26,7 +26,7 @@ export const Login = () => {
                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div className="form-outline flex-fill mb-0">
                           <input
-                            type="email"
+                            type="text"
                             name="email"
                             value={email}
                             placeholder="email"
@@ -61,7 +61,7 @@ export const Login = () => {
                           type="button"
                           className="btn btn-primary btn-lg"
                           onClick={async (e) => {
-                            const success = await actions.signUp({
+                            const success = await actions.login({
                               email: email,
                               password: password,
                             });

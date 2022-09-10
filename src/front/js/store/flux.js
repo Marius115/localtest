@@ -33,8 +33,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       login: async (requestBody) => {
+        // Cambiado
         const response = await fetch(`${process.env.BACKEND_URL}/api/token`, {
           method: "POST",
+          body: {},
           body: JSON.stringify(requestBody),
           headers: {
             "Content-type": "application/json",
