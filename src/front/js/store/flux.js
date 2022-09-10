@@ -25,6 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const response = await fetch(`${process.env.BACKEND_URL}/api/user`, {
           method: "POST",
           body: JSON.stringify(requestBody),
+          body: {},
           headers: {
             "Content-Type": "application/json",
           },

@@ -22,7 +22,7 @@ def handle_hello():
     return jsonify(response_body), 200
 
 
-@api.route('/user', methods=['POST','GET'])
+@api.route('/user', methods=['POST'])
 def handle_users():
     body = request.json
     name = body.get('name',None)
