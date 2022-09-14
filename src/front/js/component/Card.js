@@ -36,7 +36,7 @@ export const Card = ({ item, ...props }) => {
   );
 };
 
-Card.PropTypes = {
+Card.propTypes = {
   item: PropTypes.object,
-  resorce: PropTypes.string,
+  resource: PropTypes.string,
 };
