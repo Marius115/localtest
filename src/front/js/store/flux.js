@@ -1,24 +1,31 @@
+const API_URL = "https://www.swapi.tech/api";
+
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      message: null,
-      demo: [
-        {
-          title: "FIRST",
-          background: "white",
-          initial: "white",
-        },
-        {
-          title: "SECOND",
-          background: "white",
-          initial: "white",
-        },
-      ],
+      people: [],
+      vehicles: [],
+      planets: [],
+      singleItem: {},
+      favorites: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
+      getItems: async (resources) => {
+        try {
+          const response = await fetch(`${API_URL}/${resources}`);
+          const body = await response.json();
+          if (response.status !== 200) {
+            alert("No cargaron los items");
+            return;
+          }
+          setStore({
+            [`${resources}`]: body.results,
+          });
+        } catch (error) {
+          alert("algo paso");
+          console.log(error);
+        }
       },
 
       signUp: async (requestBody) => {
