@@ -35,6 +35,12 @@ def handle_users():
     new_user = User(name, email, password)
     return jsonify(new_user.serialize()), 201
 
+@api.route('/user', methods=['GET'])
+def user_list():
+    user = user.query.all()
+    all_users = list(map(
+        lambda user: user.serialize(),user))
+
 @api.route('/token', methods=['POST'])
 def create_token():
     body = request.json

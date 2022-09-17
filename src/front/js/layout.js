@@ -9,6 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Jumbotron } from "./component/Jumbotron";
 import { SignUp } from "./pages/SignUp";
 import { Login } from "./pages/Login";
 
