@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 export const Jumbotron = () => {
   const navigate = useNavigate();
   return (
-    <div className="container mb-5">
-      <div className="mt-4 p5 bg-primary bg-gradient text-white rounded">
-        <h1>Titulo de jumbotron</h1>
-        <p>texto posible</p>
+    <div className="containerj mb-5">
+      <div className="jumbotron mt-4 p5 text-white rounded">
+        <h2 className="ms-4 pt-3">Join the force!</h2>
+        <br />
+        <br />
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-dark border border-warning text-warning ms-5 mb-5"
           onClick={() => navigate("/sign-up")}
         >
           {"Registrate"}
