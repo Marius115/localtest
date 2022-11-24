@@ -28,6 +28,27 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      getsingleItem: async (resource, uid) => {
+        try {
+          const response = await fetch(`${API_URL}/${resource}/${uid}`);
+          const body = await response.json();
+          if (response.status !== 200) {
+            alert("no cargo el personaje");
+            return;
+          }
+          setStore({
+            singleItem: {
+              ...body.result.properties,
+              uid: body.result.uid,
+              description: body.result.description,
+            },
+          });
+        } catch (error) {
+          alert("algo malo paso");
+          console.log(error);
+        }
+      },
+
       signUp: async (requestBody) => {
         const response = await fetch(`${process.env.BACKEND_URL}/api/user`, {
           method: "POST",
