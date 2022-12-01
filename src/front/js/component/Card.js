@@ -13,7 +13,7 @@ export const Card = ({ item, ...props }) => {
       aria-labelledby="profile-tab"
       tabIndex="0"
     >
-      <div className="card" style={{ width: "18rem" }}>
+      <div className="card border-2 border-warning" style={{ width: "18rem" }}>
         <img
           src={`https://starwars-visualguide.com/assets/img/${
             props.resource === "people" ? "characters" : props.resource
@@ -21,12 +21,12 @@ export const Card = ({ item, ...props }) => {
           className="card-img-top"
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title">{item.name}</h5>
-          <p className="card-text">edit part</p>
+        <div className="card-body bg-dark text-center">
+          <h5 className="card-title text-warning">{item.name}</h5>
+          <br />
           <Link
             to={`/single/${props.resource}/${item.uid}`}
-            className="btn btn-primary justify-content-center align-middle"
+            className="btn btn-primary justify-content-center align-middle border-warning bg-dark fs-6"
           >
             More Info!
           </Link>

@@ -11,7 +11,7 @@ export const Home = () => {
     <div className="container">
       <Jumbotron />
       <div className="d-flex flex-wrap w-100">
-        <h2 className="text-warning">characters</h2>
+        <h2 className="text-warning justify-text-center">Characters</h2>
         <div className="d-flex overflow-scroll">
           {store.people.map((item) => {
             return <Card key={item.uid} item={item} resource={"people"} />;
