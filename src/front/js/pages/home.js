@@ -18,7 +18,7 @@ export const Home = () => {
           })}
         </div>
       </div>
-
+      <br />
       <div className="d-flex flex-wrap w-100">
         <h2 className="text-warning">Vehicles</h2>
         <div className="d-flex overflow-scroll">
@@ -27,6 +27,7 @@ export const Home = () => {
           })}
         </div>
       </div>
+      <br />
 
       <div className="d-flex flex-wrap w-100">
         <h2 className="text-warning">Planets</h2>
